@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "navbar": "/components/Navbar/Navbar",
+    "flexbox": "/components/Flexbox/Flexbox",
+    "typography": "/components/Typography/Typography",
+    "mp-html": "/uni_modules/mp-html/components/mp-html/mp-html",
+    "icon": "/components/Icon/Icon",
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup"
+  }
+}

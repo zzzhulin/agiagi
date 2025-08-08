@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "flexbox": "/components/Flexbox/Flexbox",
+    "typography": "/components/Typography/Typography"
+  }
+}

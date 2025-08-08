@@ -1,0 +1,132 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+.product-page {
+  min-height: 100vh;
+  background-color: #f4f6f9;
+}
+.product-page .swiper-content {
+  height: 734rpx;
+}
+.product-page .product-cover {
+  width: 100%;
+  height: 734rpx;
+}
+.product-page .product-content {
+  padding: 8rpx 32rpx 32rpx 32rpx;
+  background-color: #fff;
+}
+.product-page .product-price {
+  height: 88rpx;
+}
+.product-page .old-price {
+  text-decoration: line-through;
+}
+.product-page .icon-share {
+  width: 48rpx;
+  height: 48rpx;
+}
+.product-page .title {
+  padding: 10rpx 0 16rpx 0;
+}
+.product-page .tabbar-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180rpx;
+  background-color: #fff;
+  padding: 12rpx 32rpx 80rpx 48rpx;
+}
+.product-page .icon-mall {
+  width: 52rpx;
+  height: 48rpx;
+}
+.product-page .icon-customer {
+  width: 48rpx;
+  height: 48rpx;
+}
+.product-page .btn-group {
+  flex: 1;
+}
+.product-page .btn-group .buy-btn {
+  width: 100%;
+  padding: 0 48rpx;
+  height: 98rpx;
+  border-radius: 44rpx;
+  background-color: #30a375;
+  white-space: nowrap;
+}
+.product-page .tabbar-placeholder {
+  height: 180rpx;
+}
+.spec-popup {
+  position: relative;
+  background-color: #fff;
+  border-radius: 32rpx 32rpx 0 0;
+  padding: 32rpx 32rpx 80rpx 32rpx;
+}
+.spec-popup .icon-close {
+  position: absolute;
+  top: 32rpx;
+  right: 32rpx;
+  width: 48rpx;
+  height: 48rpx;
+}
+.spec-popup .spec-content {
+  padding-bottom: 44rpx;
+}
+.spec-popup .product-cover {
+  flex: none;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 16rpx;
+}
+.spec-popup .spec-list {
+  flex-wrap: wrap;
+}
+.spec-popup .spec-item {
+  padding: 12rpx 16rpx;
+  border-radius: 16rpx;
+  background-color: #f4f6f9;
+}
+.spec-popup .spec-item.active {
+  background-color: #4ef08c;
+  box-shadow: 0 0 0 2rpx #30a375 inset;
+}
+.spec-popup .count-info {
+  height: 80rpx;
+}
+.spec-popup .count-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+.spec-popup .count-input {
+  width: 96rpx;
+  height: 64rpx;
+  border-radius: 16rpx;
+  background-color: #f4f6f9;
+  text-align: center;
+  overflow: hidden;
+}
+.spec-popup .buy-btn {
+  width: 100%;
+  height: 98rpx;
+  border-radius: 49rpx;
+  background-color: #30a375;
+}

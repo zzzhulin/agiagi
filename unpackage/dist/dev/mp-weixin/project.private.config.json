@@ -1,0 +1,72 @@
+{
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pagesB/diet/scheme",
+          "pathName": "pagesB/diet/scheme",
+          "query": "memberId=882",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pagesD/product/product",
+          "pathName": "pagesD/product/product",
+          "query": "skuId=2",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pagesB/cookbook/detail",
+          "pathName": "pagesB/cookbook/detail",
+          "query": "recipeId=33",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pagesA/contract/contract",
+          "pathName": "pagesA/contract/contract",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pagesE/user/user",
+          "pathName": "pagesE/user/user",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pagesD/logistics/logistics",
+          "pathName": "pagesD/logistics/logistics",
+          "query": "orderId=44",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pagesD/order/detail",
+          "pathName": "pagesD/order/detail",
+          "query": "orderId=44",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pagesB/cookbook/history",
+          "pathName": "pagesB/cookbook/history",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pagesB/cookbook/detail",
+          "pathName": "pagesB/cookbook/detail",
+          "query": "recipeId=12",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

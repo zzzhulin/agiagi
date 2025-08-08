@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "navbar": "/components/Navbar/Navbar",
+    "flexbox": "/components/Flexbox/Flexbox",
+    "typography": "/components/Typography/Typography",
+    "icon": "/components/Icon/Icon",
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup",
+    "speech": "/components/Speech/Speech",
+    "login": "/components/Login/Login"
+  }
+}

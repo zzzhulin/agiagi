@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "navbar": "/components/Navbar/Navbar",
+    "flexbox": "/components/Flexbox/Flexbox",
+    "typography": "/components/Typography/Typography",
+    "icon": "/components/Icon/Icon",
+    "speech": "/components/Speech/Speech",
+    "login": "/components/Login/Login"
+  }
+}

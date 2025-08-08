@@ -1,0 +1,93 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+.clock-page {
+  min-height: 100vh;
+  padding: 48rpx 32rpx env(safe-area-inset-bottom) 32rpx;
+  background-color: #f4f6f9;
+}
+.clock-page .task-list {
+  padding: 0 0 0 16rpx;
+}
+.clock-page .task-item {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.clock-page .task-item.active {
+  box-shadow: 0 0 0 2rpx #30a375 inset;
+}
+.clock-page .checkbox {
+  margin-top: -20rpx;
+}
+.clock-page .alert-btn {
+  margin-left: auto;
+}
+.clock-page .task-content {
+  padding: 32rpx;
+  background: linear-gradient(180deg, #f6fff8 0%, #ffffff 100%);
+  border-radius: 24rpx;
+  box-shadow: 0 0 0 4rpx #fff inset;
+}
+.clock-page .clock-btn {
+  width: 320rpx;
+  height: 72rpx;
+  border-radius: 80rpx;
+  margin: 0 auto;
+  background-color: #30a375;
+}
+.clock-page .advice-content,
+.clock-page .log-content {
+  padding: 32rpx;
+  border-radius: 24rpx;
+  background-color: #fff;
+}
+.clock-page .record-list {
+  box-shadow: 0 0 0 2rpx #f4f6f9 inset;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+.clock-page .record-item {
+  height: 56rpx;
+  padding: 0 16rpx;
+}
+.clock-page .record-item:first-child {
+  height: 72rpx;
+  background-color: #f4f6f9;
+}
+.clock-page .clock-content {
+  position: relative;
+  padding-top: 40rpx;
+}
+.clock-page .clock-content:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 2rpx;
+  background-color: #e0e6f1;
+}
+.clock-page .clock-images {
+  flex-wrap: wrap;
+}
+.clock-page .clock-image {
+  box-shadow: 0 0 0 2rpx #e0e6f1 inset;
+  border-radius: 16rpx;
+  overflow: hidden;
+}

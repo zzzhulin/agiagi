@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "navbar": "/components/Navbar/Navbar",
+    "flexbox": "/components/Flexbox/Flexbox"
+  }
+}

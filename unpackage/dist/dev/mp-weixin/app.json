@@ -1,0 +1,126 @@
+{
+  "pages": [
+    "pages/home/home"
+  ],
+  "subPackages": [
+    {
+      "root": "pagesA",
+      "pages": [
+        "overview/overview",
+        "contract/sign",
+        "contract/contract",
+        "sign/robot",
+        "sign/officer",
+        "gift/blessing",
+        "gift/gift",
+        "gift/receive",
+        "success/success",
+        "survey/family",
+        "survey/base",
+        "survey/diet",
+        "survey/slimming",
+        "survey/height",
+        "survey/emotion",
+        "survey/sleep",
+        "survey/age",
+        "survey/metabolism",
+        "report/slimming",
+        "report/diet",
+        "report/height",
+        "report/emotion",
+        "report/sleep",
+        "report/age",
+        "report/metabolism",
+        "profile/profile"
+      ]
+    },
+    {
+      "root": "pagesB",
+      "pages": [
+        "chat/chat",
+        "robot/robot",
+        "plan/plan",
+        "sport/sport",
+        "health/health",
+        "diet/diet",
+        "diet/scheme",
+        "diet/recommend",
+        "diet/detail",
+        "survey/survey",
+        "music/music",
+        "music/play",
+        "cookbook/detail",
+        "cookbook/history",
+        "cookbook/nutrition"
+      ]
+    },
+    {
+      "root": "pagesC",
+      "pages": [
+        "tongue/diagnosis",
+        "tongue/result",
+        "clock/start",
+        "clock/clock",
+        "clock/calendar",
+        "clock/success",
+        "clock/finish",
+        "clock/setting",
+        "alert/alert",
+        "nutrition/nutrition",
+        "nutrition/risk",
+        "nutrition/map",
+        "test/test",
+        "test/list"
+      ]
+    },
+    {
+      "root": "pagesD",
+      "pages": [
+        "cart/list",
+        "cart/cart",
+        "settlement/settlement",
+        "address/address",
+        "address/edit",
+        "success/success",
+        "order/order",
+        "order/detail",
+        "refund/refund",
+        "refund/list",
+        "refund/detail",
+        "refund/log",
+        "evaluate/evaluate",
+        "evaluate/list",
+        "logistics/logistics",
+        "product/product"
+      ]
+    },
+    {
+      "root": "pagesE",
+      "pages": [
+        "family/list",
+        "family/detail",
+        "user/user"
+      ]
+    }
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black"
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "requiredPrivateInfos": [
+    "getLocation",
+    "onLocationChange",
+    "startLocationUpdateBackground",
+    "chooseAddress"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序当前位置的效果展示"
+    }
+  },
+  "usingComponents": {}
+}

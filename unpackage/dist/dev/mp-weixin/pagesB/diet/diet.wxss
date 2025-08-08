@@ -1,0 +1,169 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+.diet-page {
+  min-height: 100vh;
+  padding: 0 32rpx 190rpx 32rpx;
+  background-color: #f4f6f9;
+}
+.diet-page .background {
+  position: absolute;
+  left: 0;
+}
+.diet-page .family-list {
+  position: relative;
+  padding-top: 376rpx;
+  padding-bottom: 16rpx;
+}
+.diet-page .family-item.active {
+  width: 88rpx;
+  height: 88rpx;
+  box-shadow: 0 0 0 4rpx #30a375 inset;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+.diet-page .diet-container {
+  border-radius: 24rpx;
+  padding: 32rpx 24rpx;
+  background-color: #ffffff;
+}
+.diet-page .line {
+  width: 2rpx;
+  height: 20rpx;
+  background-color: #cfcfcf;
+}
+.diet-page .chart-content {
+  position: relative;
+  width: 638rpx;
+  height: 680rpx;
+  border-radius: 24rpx;
+  background-color: #F9F9F9;
+  overflow: hidden;
+}
+.diet-page .chart-content .icon {
+  position: absolute;
+}
+.diet-page .pie-legend {
+  position: absolute;
+  top: 204rpx;
+  left: 360rpx;
+  z-index: 9999;
+}
+.diet-page .pie-legend .dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+}
+.diet-page .pie-legend .primary-dot {
+  background-color: #30a375;
+}
+.diet-page .pie-legend .accent-dot {
+  background-color: #4ef08c;
+}
+.diet-page .pie-legend .warning-dot {
+  background-color: #ff8b39;
+}
+.diet-page .chart-tab,
+.diet-page .chart-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 9999;
+}
+.diet-page .chart-tab {
+  top: 40rpx;
+}
+.diet-page .chart-title {
+  bottom: 20rpx;
+  text-align: center;
+  opacity: 0.8;
+}
+.diet-page .scheme-point-content,
+.diet-page .plan-content,
+.diet-page .empty-content {
+  position: relative;
+  padding-top: 48rpx;
+}
+.diet-page .scheme-point-content:before,
+.diet-page .plan-content:before,
+.diet-page .empty-content:before {
+  position: absolute;
+  top: 0;
+  content: "";
+  width: 100%;
+  height: 2rpx;
+  background-color: #e2e2e2;
+}
+.diet-page .empty-content {
+  padding-bottom: 96rpx;
+}
+.diet-page .recommend-title {
+  width: 128rpx;
+  height: 48rpx;
+  background-color: #111112;
+}
+.diet-page .scheme-name.text {
+  line-height: 68rpx;
+}
+.diet-page .cookbook-content {
+  position: relative;
+  padding-top: 40rpx;
+  border-top: 2rpx dashed #88888a;
+}
+.diet-page .food-list {
+  row-gap: 16rpx;
+  -webkit-column-gap: 16rpx;
+          column-gap: 16rpx;
+  flex-wrap: wrap;
+}
+.diet-page .food-item {
+  padding: 8rpx 16rpx;
+  border-radius: 8rpx;
+  background-color: #E3FFEE;
+}
+.diet-page .advice-container {
+  margin-top: 32rpx;
+}
+.diet-page .advice-content {
+  padding: 32rpx 24rpx;
+  background-color: #ffffff;
+  border-radius: 24rpx;
+}
+.diet-page .advice-item {
+  line-height: 1;
+}
+.diet-page .advice-item .text {
+  display: inline;
+}
+.diet-page .scheme-btn {
+  width: 200rpx;
+  height: 72rpx;
+  border-radius: 44rpx;
+  background-color: #30a375;
+}
+.diet-page .cookbook-btn {
+  position: fixed;
+  left: 32rpx;
+  right: 32rpx;
+  bottom: 68rpx;
+  width: 686rpx;
+  height: 88rpx;
+  border-radius: 44rpx;
+  background-color: #30a375;
+}

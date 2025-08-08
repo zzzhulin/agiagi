@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "navbar": "/components/Navbar/Navbar",
+    "flexbox": "/components/Flexbox/Flexbox",
+    "typography": "/components/Typography/Typography",
+    "icon": "/components/Icon/Icon",
+    "login": "/components/Login/Login"
+  }
+}

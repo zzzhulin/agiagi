@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "flexbox": "/components/Flexbox/Flexbox",
+    "navbar": "/components/Navbar/Navbar",
+    "icon": "/components/Icon/Icon",
+    "typography": "/components/Typography/Typography",
+    "profile-base": "/pagesA/components/profile-base/profile-base",
+    "profile-disease": "/pagesA/components/profile-disease/profile-disease",
+    "profile-inherit": "/pagesA/components/profile-inherit/profile-inherit",
+    "profile-test": "/pagesA/components/profile-test/profile-test",
+    "profile-lifestyle": "/pagesA/components/profile-lifestyle/profile-lifestyle",
+    "speech": "/components/Speech/Speech",
+    "login": "/components/Login/Login"
+  }
+}

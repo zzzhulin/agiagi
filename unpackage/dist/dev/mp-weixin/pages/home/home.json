@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "flexbox": "/components/Flexbox/Flexbox"
+  }
+}

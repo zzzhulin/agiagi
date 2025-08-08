@@ -1,0 +1,262 @@
+{
+	"pages": [{
+		"path": "pages/home/home"
+	}],
+	"subPackages": [{
+			"root": "pagesA",
+			"pages": [{
+					"path": "overview/overview"
+				},
+				{
+					"path": "contract/sign"
+				},
+				{
+					"path": "contract/contract"
+				},
+				{
+					"path": "sign/robot"
+				},
+				{
+					"path": "sign/officer"
+				},
+				{
+					"path": "gift/blessing"
+				},
+				{
+					"path": "gift/gift"
+				},
+				{
+					"path": "gift/receive"
+				},
+				{
+					"path": "success/success"
+				},
+				{
+					"path": "survey/family"
+				},
+				{
+					"path": "survey/base"
+				},
+				{
+					"path": "survey/diet"
+				},
+				{
+					"path": "survey/slimming"
+				},
+				{
+					"path": "survey/height"
+				},
+				{
+					"path": "survey/emotion"
+				},
+				{
+					"path": "survey/sleep"
+				},
+				{
+					"path": "survey/age"
+				},
+				{
+					"path": "survey/metabolism"
+				},
+				{
+					"path": "report/slimming"
+				},
+				{
+					"path": "report/diet"
+				},
+				{
+					"path": "report/height"
+				},
+				{
+					"path": "report/emotion"
+				},
+				{
+					"path": "report/sleep"
+				},
+				{
+					"path": "report/age"
+				},
+				{
+					"path": "report/metabolism"
+				},
+				{
+					"path": "profile/profile"
+				}
+			]
+		}, {
+			"root": "pagesB",
+			"pages": [{
+					"path": "chat/chat"
+				},
+				{
+					"path": "robot/robot"
+				},
+				{
+					"path": "plan/plan"
+				},
+				{
+					"path": "sport/sport"
+				},
+				{
+					"path": "health/health"
+				},
+				{
+					"path": "diet/diet"
+				},
+				{
+					"path": "diet/scheme"
+				},
+				{
+					"path": "diet/recommend"
+				},
+				{
+					"path": "diet/detail"
+				},
+				{
+					"path": "survey/survey"
+				},
+				{
+					"path": "music/music"
+				},
+				{
+					"path": "music/play"
+				},
+				{
+					"path": "cookbook/detail"
+				},
+				{
+					"path": "cookbook/history"
+				},
+				{
+					"path": "cookbook/nutrition"
+				}
+			]
+		},
+		{
+			"root": "pagesC",
+			"pages": [{
+					"path": "tongue/diagnosis"
+				},
+				{
+					"path": "tongue/result"
+				},
+				{
+					"path": "clock/start"
+				},
+				{
+					"path": "clock/clock"
+				},
+				{
+					"path": "clock/calendar"
+				},
+				{
+					"path": "clock/success"
+				},
+				{
+					"path": "clock/finish"
+				},
+				{
+					"path": "clock/setting"
+				},
+				{
+					"path": "alert/alert"
+				},
+				{
+					"path": "nutrition/nutrition"
+				},
+				{
+					"path": "nutrition/risk"
+				},
+				{
+					"path": "nutrition/map"
+				},
+				{
+					"path": "test/test"
+				},
+				{
+					"path": "test/list"
+				}
+			]
+		},
+		{
+			"root": "pagesD",
+			"pages": [{
+					"path": "cart/list"
+				},
+				{
+					"path": "cart/cart"
+				},
+				{
+					"path": "settlement/settlement"
+				},
+				{
+					"path": "address/address"
+				},
+				{
+					"path": "address/edit"
+				},
+				{
+					"path": "success/success"
+				},
+				{
+					"path": "order/order"
+				},
+				{
+					"path": "order/detail"
+				},
+				{
+					"path": "refund/refund"
+				},
+				{
+					"path": "refund/list"
+				},
+				{
+					"path": "refund/detail"
+				},
+				{
+					"path": "refund/log"
+				},
+				{
+					"path": "evaluate/evaluate"
+				},
+				{
+					"path": "evaluate/list"
+				},
+				{
+					"path": "logistics/logistics"
+				},
+				{
+					"path": "product/product"
+				}
+			]
+		},
+		{
+			"root": "pagesE",
+			"pages": [{
+					"path": "family/list",
+					"style": {
+						"disableScroll": true
+					}
+				},
+				{
+					"path": "family/detail"
+				},
+				{
+					"path": "user/user"
+				}
+			]
+		}
+	],
+	"globalStyle": {
+		"navigationStyle": "custom",
+		"navigationBarTextStyle": "black"
+	},
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^profile-(.*)": "@/pagesA/components/profile-$1/profile-$1.vue",
+			"^popup-(.*)": "@/pagesC/components/popup-$1/popup-$1.vue"
+		}
+	},
+	"uniIdRouter": {}
+}

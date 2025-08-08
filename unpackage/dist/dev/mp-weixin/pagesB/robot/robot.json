@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "flexbox": "/components/Flexbox/Flexbox",
+    "navbar": "/components/Navbar/Navbar",
+    "icon": "/components/Icon/Icon",
+    "typography": "/components/Typography/Typography",
+    "mp-html": "/uni_modules/mp-html/components/mp-html/mp-html",
+    "tabbar": "/components/Tabbar/Tabbar",
+    "login": "/components/Login/Login"
+  }
+}

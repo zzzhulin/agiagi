@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup",
+    "flexbox": "/components/Flexbox/Flexbox",
+    "icon": "/components/Icon/Icon",
+    "typography": "/components/Typography/Typography",
+    "speech": "/components/Speech/Speech"
+  }
+}

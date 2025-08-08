@@ -1,0 +1,120 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+.nutrition-map-page {
+  padding: 32rpx 32rpx 136rpx 32rpx;
+}
+.nutrition-map-page .user-container {
+  margin-bottom: 48rpx;
+}
+.nutrition-map-page .organ-item {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 24rpx;
+  background-color: #f4f6f9;
+}
+.nutrition-map-page .organ-item.active {
+  background-color: #E3FFEE;
+}
+.nutrition-map-page .record-container {
+  padding: 0 6rpx;
+}
+.nutrition-map-page .description-content {
+  position: relative;
+  padding-bottom: 48rpx;
+}
+.nutrition-map-page .description-content::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2rpx;
+  background-color: #e0e6f1;
+}
+.nutrition-map-page .food-list {
+  flex-wrap: wrap;
+  -webkit-column-gap: 16rpx;
+          column-gap: 16rpx;
+  row-gap: 16rpx;
+}
+.nutrition-map-page .food-item {
+  padding: 16rpx 24rpx;
+  border-radius: 16rpx;
+  background-color: #F9F9F9;
+}
+.nutrition-map-page .benefit-food,
+.nutrition-map-page .adverse-food {
+  position: relative;
+  width: 330rpx;
+  padding: 48rpx 24rpx 32rpx 24rpx;
+  box-shadow: 0 0 0 2rpx #e0e6f1 inset;
+  border-radius: 24rpx;
+}
+.nutrition-map-page .benefit-food .tag,
+.nutrition-map-page .adverse-food .tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.nutrition-map-page .toggle-btn {
+  width: 330rpx;
+  height: 64rpx;
+  margin: 0 auto;
+  box-shadow: 0 0 0 2rpx #88888a inset;
+  border-radius: 44rpx;
+}
+.organ-popup {
+  padding: 48rpx 32rpx 0 32rpx;
+}
+.organ-popup .description {
+  position: relative;
+  width: 100%;
+  height: 272rpx;
+  padding: 24rpx 32rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 0 0 2rpx #e0e6f1 inset;
+  font-size: 32rpx;
+  line-height: 44rpx;
+  color: #111112;
+}
+.organ-popup .form-input {
+  height: auto;
+  min-height: auto;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  padding: 28rpx 32rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 0 0 2rpx #e0e6f1 inset;
+}
+.organ-popup .speech-btn {
+  position: absolute;
+  right: 16rpx;
+  bottom: 16rpx;
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  background-color: #f4f6f9;
+  z-index: 9;
+}
+.organ-popup .save-btn {
+  width: 100%;
+  height: 88rpx;
+  background-color: #30a375;
+  border-radius: 44rpx;
+}

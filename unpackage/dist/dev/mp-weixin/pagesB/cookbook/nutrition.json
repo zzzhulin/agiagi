@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "navbar": "/components/Navbar/Navbar",
+    "flexbox": "/components/Flexbox/Flexbox",
+    "typography": "/components/Typography/Typography",
+    "l-echart": "/uni_modules/lime-echart/components/l-echart/l-echart",
+    "icon": "/components/Icon/Icon"
+  }
+}
