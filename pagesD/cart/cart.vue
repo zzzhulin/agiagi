@@ -12,7 +12,7 @@
 						<Typography>{{ duration_days }}天量</Typography>
 						<Icon src="icon_triangle.png" size="20"></Icon>
 					</Flexbox>
-					<Flexbox align="center" gap="2" @tap="navigateTo(`/pagesB/cookbook/detail?recipeId=${recipeId}`)">
+					<Flexbox align="center" gap="2" @tap="navigateTo('/pagesB/cookbook/detail')">
 						<Icon src="icon_menu.png" size="16"></Icon>
 						<Typography>菜谱</Typography>
 					</Flexbox>

@@ -221,6 +221,9 @@ export default {
 		};
 	},
 	onShow() {
+		if (!this.userInfo) {
+			return;
+		}
 		this.getContractCount();
 		this.getDefaultMember();
 		this.getTask();
@@ -230,7 +233,7 @@ export default {
 	onShareAppMessage() {
 		return {
 			title: '阿济阿济',
-			path: '/pagesA/overview/overview',
+			path: '/pagesA/overview/overview'
 		};
 	},
 	computed: {

@@ -5,47 +5,51 @@ import { getToken } from '@/utils/token';
 import { initVoice } from '@/utils/voice';
 
 export default {
-  onLaunch: function () {
-    this.getSystemInfo();
-    console.log('App onLaunch');
-    if (this.token) {
-      this.getAliyunConfig();
-      this.getUserInfo();
-    }
-  },
-  onShow: function () {
-    console.log('App Show');
-  },
-  onHide: function () {
-    console.log('App Hide');
-  },
-  computed: {
-    ...mapState(['token'])
-  },
-  watch: {
-    token() {
-      this.getAliyunConfig();
-    }
-  },
-  methods: {
-    ...mapActions(['login', 'getUserInfo', 'getSystemInfo']),
-    ...mapMutations(['setAKID', 'setAKKEY', 'setAPPKEY', 'setVoiceToken']),
-    getAliyunConfig() {
-      request({
-        url: '/api/v3/aliyun/aliyun_voice_config',
-        isRobot: true,
-        success: async (res) => {
-          // 获取 token 等配置
-          const token = await getToken(res.AKID, res.AKKEY);
-          this.setVoiceToken(token);
-          this.setAKID(res.AKID);
-          this.setAKKEY(res.AKKEY);
-          this.setAPPKEY(res.appKey);
-          initVoice(res.appKey, token);
-        }
-      });
-    }
-  }
+	onLaunch: function () {
+		this.getSystemInfo();
+		console.log('App onLaunch');
+		if (this.token) {
+			this.getAliyunConfig();
+			this.getUserInfo();
+		} else {
+			uni.reLaunch({
+				url: '/pagesA/contract/sign'
+			});
+		}
+	},
+	onShow: function () {
+		console.log('App Show');
+	},
+	onHide: function () {
+		console.log('App Hide');
+	},
+	computed: {
+		...mapState(['token'])
+	},
+	watch: {
+		token() {
+			this.getAliyunConfig();
+		}
+	},
+	methods: {
+		...mapActions(['login', 'getUserInfo', 'getSystemInfo']),
+		...mapMutations(['setAKID', 'setAKKEY', 'setAPPKEY', 'setVoiceToken']),
+		getAliyunConfig() {
+			request({
+				url: '/api/v3/aliyun/aliyun_voice_config',
+				isRobot: true,
+				success: async (res) => {
+					// 获取 token 等配置
+					const token = await getToken(res.AKID, res.AKKEY);
+					this.setVoiceToken(token);
+					this.setAKID(res.AKID);
+					this.setAKKEY(res.AKKEY);
+					this.setAPPKEY(res.appKey);
+					initVoice(res.appKey, token);
+				}
+			});
+		}
+	}
 };
 </script>
 

@@ -209,6 +209,9 @@ var _default = {
     };
   },
   onShow: function onShow() {
+    if (!this.userInfo) {
+      return;
+    }
     this.getContractCount();
     this.getDefaultMember();
     this.getTask();

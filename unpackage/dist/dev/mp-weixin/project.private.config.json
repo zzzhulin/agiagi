@@ -4,6 +4,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pagesA/profile/profile",
+          "pathName": "pagesA/profile/profile",
+          "query": "memberId=608&tab=base&userId=29",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pagesA/overview/overview",
+          "pathName": "pagesA/overview/overview",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pagesB/diet/scheme",
           "pathName": "pagesB/diet/scheme",
           "query": "memberId=882",
