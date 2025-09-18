@@ -119,12 +119,12 @@ export default {
 		this.skuId = option.skuId;
 		this.getProduct();
 	},
-	onShareAppMessage() {
-		return {
-			title: '商品详情',
-			path: `/pagesD/product/product?skuId=${this.skuId}`
-		};
-	},
+	// onShareAppMessage() {
+	// 	return {
+	// 		title: '商品详情',
+	// 		path: `/pagesD/product/product?skuId=${this.skuId}`
+	// 	};
+	// },
 	computed: {
 		selectedSpec() {
 			const arr = [];

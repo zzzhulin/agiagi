@@ -196,14 +196,14 @@ export default {
 	onPageScroll(e) {
 		this.navbarBgColor = e.scrollTop >= 50 ? '#ffffff' : 'transparent';
 	},
-	onShareAppMessage() {
-		return {
-			title: '购物清单',
-			path: this.text
-				? `/pagesD/cart/cart?text=${this.text}&memberId=${this.memberId || this.taskInfo.member_id}&userId=${this.userId || this.userInfo.member_id}`
-				: `/pagesD/cart/cart?memberId=${this.memberId || this.taskInfo.member_id}&userId=${this.userId || this.userInfo.member_id}`
-		};
-	},
+	// onShareAppMessage() {
+	// 	return {
+	// 		title: '购物清单',
+	// 		path: this.text
+	// 			? `/pagesD/cart/cart?text=${this.text}&memberId=${this.memberId || this.taskInfo.member_id}&userId=${this.userId || this.userInfo.member_id}`
+	// 			: `/pagesD/cart/cart?memberId=${this.memberId || this.taskInfo.member_id}&userId=${this.userId || this.userInfo.member_id}`
+	// 	};
+	// },
 	computed: {
 		...mapState(['userInfo', 'taskInfo'])
 	},

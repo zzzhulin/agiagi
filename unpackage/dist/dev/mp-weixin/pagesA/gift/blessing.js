@@ -214,27 +214,26 @@ var _default = {
     this.member_card_id = option.cardId;
     this.out_trade_no = option.outTradeNo;
   },
-  onShareAppMessage: function onShareAppMessage() {
-    var _this = this;
-    // 调用赠送接口
-    this.onPresent();
-    var promise = new Promise(function (resolve) {
-      setTimeout(function () {
-        resolve({
-          title: _this.blessing || '赠你一份好礼，祝你每天都开心快乐！',
-          imageUrl: _this.expression_path,
-          path: "/pagesA/gift/gift?no=".concat(_this.no, "&outTradeNo=").concat(_this.out_trade_no)
-        });
-        _this.isShare = true;
-      }, 2000);
-    });
-    return {
-      title: this.blessing || '赠你一份好礼，祝你每天都开心快乐！',
-      imageUrl: this.expression_path,
-      path: "/pagesA/gift/gift?no=".concat(this.no, "&outTradeNo=").concat(this.out_trade_no),
-      promise: promise
-    };
-  },
+  // onShareAppMessage() {
+  // 	// 调用赠送接口
+  // 	this.onPresent();
+  // 	const promise = new Promise((resolve) => {
+  // 		setTimeout(() => {
+  // 			resolve({
+  // 				title: this.blessing || '赠你一份好礼，祝你每天都开心快乐！',
+  // 				imageUrl: this.expression_path,
+  // 				path: `/pagesA/gift/gift?no=${this.no}&outTradeNo=${this.out_trade_no}`
+  // 			});
+  // 			this.isShare = true;
+  // 		}, 2000);
+  // 	});
+  // 	return {
+  // 		title: this.blessing || '赠你一份好礼，祝你每天都开心快乐！',
+  // 		imageUrl: this.expression_path,
+  // 		path: `/pagesA/gift/gift?no=${this.no}&outTradeNo=${this.out_trade_no}`,
+  // 		promise
+  // 	};
+  // },
   watch: {
     isShare: function isShare() {
       uni.redirectTo({
@@ -244,7 +243,7 @@ var _default = {
   },
   methods: {
     onUpload: function onUpload() {
-      var _this2 = this;
+      var _this = this;
       uni.chooseMedia({
         count: 1,
         mediaType: ['image', 'video'],
@@ -265,11 +264,11 @@ var _default = {
                     result = _context.sent;
                     if (result) {
                       if (file.fileType === 'image') {
-                        _this2.expression_path = result;
-                        _this2.expression_type = 1;
+                        _this.expression_path = result;
+                        _this.expression_type = 1;
                       } else {
-                        _this2.video_url = result;
-                        _this2.expression_type = 2;
+                        _this.video_url = result;
+                        _this.expression_type = 2;
                       }
                     }
                   case 5:
@@ -287,7 +286,7 @@ var _default = {
       });
     },
     onPresent: function onPresent() {
-      var _this3 = this;
+      var _this2 = this;
       (0, _request.request)({
         url: '/contract/api/membercard/blessing',
         method: 'POST',
@@ -300,7 +299,7 @@ var _default = {
         },
         success: function success(res) {
           if (res) {
-            _this3.no = res.no;
+            _this2.no = res.no;
           }
         }
       });

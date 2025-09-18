@@ -233,7 +233,8 @@ export default {
 	onShareAppMessage() {
 		return {
 			title: '阿济阿济',
-			path: '/pagesA/overview/overview'
+			path: '/pagesA/home/home',
+			imageUrl:'https://cdn.agiagi.cc/images/brand.png'
 		};
 	},
 	computed: {

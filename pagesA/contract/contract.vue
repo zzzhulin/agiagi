@@ -270,12 +270,12 @@ export default {
 			this.navbarBgColor = 'transparent';
 		}
 	},
-	onShareAppMessage() {
-		return {
-			title: '阿济阿济',
-			path: '/pagesA/contract/contract'
-		};
-	},
+	// onShareAppMessage() {
+	// 	return {
+	// 		title: '阿济阿济',
+	// 		path: '/pagesA/contract/contract'
+	// 	};
+	// },
 	watch: {
 		contractId() {
 			this.getContract();

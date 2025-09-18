@@ -77,6 +77,7 @@
 import { mapState, mapActions, mapMutations } from 'vuex';
 import { request } from '@/utils/request';
 import { upload } from '@/utils/upload';
+import { getSceneParams } from '@/utils/util';
 export default {
 	data() {
 		return {
@@ -92,6 +93,11 @@ export default {
 				this.getUserInfo();
 			}
 			this.getOfficers();
+			const params = getSceneParams();
+			console.log(params);
+			if (params && params.serviceId && params.agentId) {
+				this.bindID(params.serviceId, params.agentId);
+			}
 		}
 	},
 	computed: {
@@ -109,6 +115,20 @@ export default {
 	methods: {
 		...mapMutations(['setToken']),
 		...mapActions(['getUserInfo']),
+		bindID(service_id, agent_id) {
+			request({
+				url: '/api/contract.service/sendContractServiceCard',
+				method: 'POST',
+				data: { service_id, agent_id },
+				success: (res) => {
+					if (res) {
+						uni.redirectTo({
+							url: '/pagesA/overview/overview'
+						});
+					}
+				}
+			});
+		},
 		saveUserInfo() {
 			this.setAvatar();
 			this.setNickname();
@@ -144,6 +164,9 @@ export default {
 			});
 		},
 		getPhoneNumber(e) {
+			if (!e.detail.code) {
+				return;
+			}
 			uni.showLoading({
 				title: '正在授权',
 				mask: true

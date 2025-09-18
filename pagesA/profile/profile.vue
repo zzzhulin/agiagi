@@ -82,12 +82,12 @@ export default {
 	onPageScroll(e) {
 		this.navbarBgColor = e.scrollTop >= 50 ? '#ffffff' : 'transparent';
 	},
-	onShareAppMessage() {
-		return {
-			title: '健康档案',
-			path: `/pagesA/profile/profile?tab=${this.activeTab}&memberId=${this.memberId}&userId=${this.userId || this.userInfo.member_id}`
-		};
-	},
+	// onShareAppMessage() {
+	// 	return {
+	// 		title: '健康档案',
+	// 		path: `/pagesA/profile/profile?tab=${this.activeTab}&memberId=${this.memberId}&userId=${this.userId || this.userInfo.member_id}`
+	// 	};
+	// },
 	computed: {
 		...mapState(['userInfo'])
 	},

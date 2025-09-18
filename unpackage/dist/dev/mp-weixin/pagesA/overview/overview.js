@@ -221,7 +221,8 @@ var _default = {
   onShareAppMessage: function onShareAppMessage() {
     return {
       title: '阿济阿济',
-      path: '/pagesA/overview/overview'
+      path: '/pagesA/home/home',
+      imageUrl: 'https://cdn.agiagi.cc/images/brand.png'
     };
   },
   computed: _objectSpread(_objectSpread({}, (0, _vuex.mapState)(['userInfo', 'contractCount', 'taskInfo', 'member'])), {}, {

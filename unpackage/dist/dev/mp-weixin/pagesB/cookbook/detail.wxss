@@ -50,8 +50,12 @@
   border-left: 2rpx solid #e0e6f1;
 }
 .cookbook-detail .table .td:first-child {
-  width: 160rpx;
+  width: 162rpx;
   border-left: none;
+}
+.cookbook-detail .table .meal-text.text {
+  white-space: break-spaces;
+  line-height: 44rpx;
 }
 .cookbook-detail .empty-content {
   margin-top: 200rpx;

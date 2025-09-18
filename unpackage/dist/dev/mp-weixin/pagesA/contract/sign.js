@@ -181,6 +181,7 @@ var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/run
 var _vuex = __webpack_require__(/*! vuex */ 33);
 var _request = __webpack_require__(/*! @/utils/request */ 34);
 var _upload = __webpack_require__(/*! @/utils/upload */ 64);
+var _util = __webpack_require__(/*! @/utils/util */ 36);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var _default = {
@@ -198,6 +199,11 @@ var _default = {
         this.getUserInfo();
       }
       this.getOfficers();
+      var params = (0, _util.getSceneParams)();
+      console.log(params);
+      if (params && params.serviceId && params.agentId) {
+        this.bindID(params.serviceId, params.agentId);
+      }
     }
   },
   computed: _objectSpread({}, (0, _vuex.mapState)(['token', 'userInfo'])),
@@ -211,6 +217,23 @@ var _default = {
     }
   },
   methods: _objectSpread(_objectSpread(_objectSpread({}, (0, _vuex.mapMutations)(['setToken'])), (0, _vuex.mapActions)(['getUserInfo'])), {}, {
+    bindID: function bindID(service_id, agent_id) {
+      (0, _request.request)({
+        url: '/api/contract.service/sendContractServiceCard',
+        method: 'POST',
+        data: {
+          service_id: service_id,
+          agent_id: agent_id
+        },
+        success: function success(res) {
+          if (res) {
+            uni.redirectTo({
+              url: '/pagesA/overview/overview'
+            });
+          }
+        }
+      });
+    },
     saveUserInfo: function saveUserInfo() {
       this.setAvatar();
       this.setNickname();
@@ -248,6 +271,9 @@ var _default = {
     },
     getPhoneNumber: function getPhoneNumber(e) {
       var _this2 = this;
+      if (!e.detail.code) {
+        return;
+      }
       uni.showLoading({
         title: '正在授权',
         mask: true

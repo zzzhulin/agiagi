@@ -84,12 +84,12 @@ export default {
 			this.getLatestSurvey();
 		}
 	},
-	onShareAppMessage() {
-		return {
-			title: '匹兹堡睡眠质量调查报告',
-			path: `/pagesA/report/sleep?from=${this.from}&appId=${this.appId}&memberId=${this.memberId}&recordId=${this.recordId}&userId=${this.userId || this.userInfo.member_id}`
-		};
-	},
+	// onShareAppMessage() {
+	// 	return {
+	// 		title: '匹兹堡睡眠质量调查报告',
+	// 		path: `/pagesA/report/sleep?from=${this.from}&appId=${this.appId}&memberId=${this.memberId}&recordId=${this.recordId}&userId=${this.userId || this.userInfo.member_id}`
+	// 	};
+	// },
 	computed: {
 		...mapState(['userInfo', 'member'])
 	},

@@ -163,3 +163,23 @@ export const extractSpecs = (title = '') => {
 	// 返回所有匹配，若无则返回空数组
 	return title.match(regex) || [];
 };
+
+export const getSceneParams = () => {
+	const options = uni.getEnterOptionsSync()
+	let params = {}
+
+	// 1. 如果 query 里有 scene，需要解码+解析
+	if (options.query && options.query.scene) {
+		const sceneStr = decodeURIComponent(options.query.scene)
+		sceneStr.split("&").forEach(item => {
+			const [key, value] = item.split("=")
+			if (key) params[key] = value
+		})
+	}
+	// 2. 否则直接取 query（比如 navigator 传参 ?a=1&b=2）
+	else if (options.query && Object.keys(options.query).length > 0) {
+		params = options.query
+	}
+
+	return params
+}

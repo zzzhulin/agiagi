@@ -4,6 +4,27 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/home/home",
+          "pathName": "pages/home/home",
+          "query": "scene=serviceId%3D13%26agentId%3D20",
+          "launchMode": "default",
+          "scene": 1047
+        },
+        {
+          "name": "pagesB/cookbook/detail",
+          "pathName": "pagesB/cookbook/detail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pagesA/contract/sign",
+          "pathName": "pagesA/contract/sign",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pagesA/profile/profile",
           "pathName": "pagesA/profile/profile",
           "query": "memberId=608&tab=base&userId=29",
@@ -82,5 +103,6 @@
         }
       ]
     }
-  }
+  },
+  "libVersion": "3.10.0"
 }

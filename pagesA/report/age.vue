@@ -55,12 +55,12 @@ export default {
 			this.getLatestSurvey();
 		}
 	},
-	onShareAppMessage() {
-		return {
-			title: '身体年龄测评报告',
-			path: `/pagesA/report/age?from=${this.from}&appId=${this.appId}&memberId=${this.memberId}&recordId=${this.recordId}&userId=${this.userId || this.userInfo.member_id}`
-		};
-	},
+	// onShareAppMessage() {
+	// 	return {
+	// 		title: '身体年龄测评报告',
+	// 		path: `/pagesA/report/age?from=${this.from}&appId=${this.appId}&memberId=${this.memberId}&recordId=${this.recordId}&userId=${this.userId || this.userInfo.member_id}`
+	// 	};
+	// },
 	computed: {
 		...mapState(['userInfo', 'member'])
 	},

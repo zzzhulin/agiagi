@@ -30,7 +30,7 @@
 								<Typography color="gray2">{{ rowsMap[row] }}</Typography>
 							</Flexbox>
 							<Flexbox align="left" className="td">
-								<Typography>{{ mergedQuantities(day[row] || []).join('、') }}</Typography>
+								<Typography className="meal-text">{{ mergedQuantities(day[row] || []).join('\n') }}</Typography>
 							</Flexbox>
 						</Flexbox>
 					</Flexbox>
@@ -55,13 +55,13 @@ export default {
 			userId: '',
 			family: [],
 			recipe_content: [],
-			rows: ['breakfast', 'morning', 'lunch', 'snack', 'dinner'],
+			rows: ['breakfast', 'lunch', 'snack', 'dinner', 'morning'],
 			rowsMap: {
 				breakfast: '早餐',
-				morning: '晨起',
 				lunch: '午餐',
 				snack: '加餐',
-				dinner: '晚餐'
+				dinner: '晚餐',
+				morning: '药食同源'
 			}
 		};
 	},
@@ -71,12 +71,12 @@ export default {
 		this.recipeId = option.recipeId;
 		this.getCookbooks();
 	},
-	onShareAppMessage() {
-		return {
-			title: '食谱详情',
-			path: `/pagesB/cookbook/detail?recipeId=${this.recipeId}&memberId=${this.memberId}&userId=${this.userId || this.userInfo.member_id}`
-		};
-	},
+	// onShareAppMessage() {
+	// 	return {
+	// 		title: '食谱详情',
+	// 		path: `/pagesB/cookbook/detail?recipeId=${this.recipeId}&memberId=${this.memberId}&userId=${this.userId || this.userInfo.member_id}`
+	// 	};
+	// },
 	computed: {
 		...mapState(['member', 'userInfo'])
 	},
@@ -116,7 +116,7 @@ export default {
 			});
 		},
 		mergedQuantities(meal) {
-			return [].concat(...meal.map((dish) => dish.quantity));
+			return [].concat(...meal.map((dish) => dish.name + '(' + dish.quantity + ')'));
 		},
 		selectMember(member) {
 			this.loaded = false;
@@ -218,9 +218,14 @@ export default {
 			padding: 16rpx 24rpx;
 			border-left: 2rpx solid $uni-border-color;
 			&:first-child {
-				width: 160rpx;
+				width: 162rpx;
 				border-left: none;
 			}
+		}
+
+		.meal-text.text {
+			white-space: break-spaces;
+			line-height: 44rpx;
 		}
 	}
 	.empty-content {

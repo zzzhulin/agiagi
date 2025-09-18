@@ -202,12 +202,12 @@ var _default = {
       this.getLatestSurvey();
     }
   },
-  onShareAppMessage: function onShareAppMessage() {
-    return {
-      title: '匹兹堡睡眠质量调查报告',
-      path: "/pagesA/report/sleep?from=".concat(this.from, "&appId=").concat(this.appId, "&memberId=").concat(this.memberId, "&recordId=").concat(this.recordId, "&userId=").concat(this.userId || this.userInfo.member_id)
-    };
-  },
+  // onShareAppMessage() {
+  // 	return {
+  // 		title: '匹兹堡睡眠质量调查报告',
+  // 		path: `/pagesA/report/sleep?from=${this.from}&appId=${this.appId}&memberId=${this.memberId}&recordId=${this.recordId}&userId=${this.userId || this.userInfo.member_id}`
+  // 	};
+  // },
   computed: _objectSpread({}, (0, _vuex.mapState)(['userInfo', 'member'])),
   methods: {
     getRecordDetail: function getRecordDetail() {

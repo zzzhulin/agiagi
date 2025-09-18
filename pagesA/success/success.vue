@@ -12,6 +12,12 @@
 			<Flexbox align="center" className="activate-btn" v-if="orderInfo.status !== 'used'" @tap="onActivate">
 				<Typography fontSize="16" color="white" :bold="true">立即领取</Typography>
 			</Flexbox>
+			<Flexbox align="center" className="present-btn" v-if="from === 'sign'" @tap="navigateTo('/pagesA/overview/overview')">
+				<Typography fontSize="16" color="gray1">回到首页</Typography>
+			</Flexbox>
+			<Flexbox align="center" className="activate-btn" v-if="from === 'sign'" @tap="navigateTo('/pagesA/contract/contract')">
+				<Typography fontSize="16" color="gray1">查看合约</Typography>
+			</Flexbox>
 		</Flexbox>
 
 		<Login></Login>
@@ -44,6 +50,11 @@ export default {
 						this.orderInfo = res;
 					}
 				}
+			});
+		},
+		navigateTo(url) {
+			uni.redirectTo({
+				url
 			});
 		},
 		navigateToGive() {

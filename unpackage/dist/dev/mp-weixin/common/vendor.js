@@ -46413,13 +46413,13 @@ exports.whiteList = whiteList;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(uni) {
 
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.utctimestamp = exports.sleep = exports.parseStyle = exports.parseMsg = exports.isImageLink = exports.isAudioFile = exports.getTime = exports.formatTime = exports.formatNumber = exports.formatDate = exports.filterParams = exports.extractSpecs = exports.arrayBufferToString = void 0;
+exports.utctimestamp = exports.sleep = exports.parseStyle = exports.parseMsg = exports.isImageLink = exports.isAudioFile = exports.getTime = exports.getSceneParams = exports.formatTime = exports.formatNumber = exports.formatDate = exports.filterParams = exports.extractSpecs = exports.arrayBufferToString = void 0;
 var _typeof2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/typeof */ 13));
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ 5));
 var isAudioFile = function isAudioFile(filename) {
@@ -46592,6 +46592,29 @@ var extractSpecs = function extractSpecs() {
   return title.match(regex) || [];
 };
 exports.extractSpecs = extractSpecs;
+var getSceneParams = function getSceneParams() {
+  var options = uni.getEnterOptionsSync();
+  var params = {};
+
+  // 1. 如果 query 里有 scene，需要解码+解析
+  if (options.query && options.query.scene) {
+    var sceneStr = decodeURIComponent(options.query.scene);
+    sceneStr.split("&").forEach(function (item) {
+      var _item$split = item.split("="),
+        _item$split2 = (0, _slicedToArray2.default)(_item$split, 2),
+        key = _item$split2[0],
+        value = _item$split2[1];
+      if (key) params[key] = value;
+    });
+  }
+  // 2. 否则直接取 query（比如 navigator 传参 ?a=1&b=2）
+  else if (options.query && Object.keys(options.query).length > 0) {
+    params = options.query;
+  }
+  return params;
+};
+exports.getSceneParams = getSceneParams;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
 

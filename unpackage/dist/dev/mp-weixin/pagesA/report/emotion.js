@@ -202,12 +202,14 @@ var _default = {
       this.getLatestSurvey();
     }
   },
-  onShareAppMessage: function onShareAppMessage() {
-    return {
-      title: 'PHQ－9抑郁调查报告',
-      path: "/pagesA/report/emotion?from=".concat(this.from, "&appId=").concat(this.appId, "&memberId=").concat(this.memberId, "&recordId=").concat(this.recordId, "&userId=").concat(this.userId || this.userInfo.member_id)
-    };
-  },
+  // onShareAppMessage() {
+  // 	return {
+  // 		title: 'PHQ－9抑郁调查报告',
+  // 		path: `/pagesA/report/emotion?from=${this.from}&appId=${this.appId}&memberId=${this.memberId}&recordId=${this.recordId}&userId=${
+  // 			this.userId || this.userInfo.member_id
+  // 		}`
+  // 	};
+  // },
   computed: _objectSpread({}, (0, _vuex.mapState)(['userInfo', 'member'])),
   methods: {
     getRecordDetail: function getRecordDetail() {

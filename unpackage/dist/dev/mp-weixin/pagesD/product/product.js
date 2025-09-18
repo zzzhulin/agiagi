@@ -340,12 +340,12 @@ var _default = {
     this.skuId = option.skuId;
     this.getProduct();
   },
-  onShareAppMessage: function onShareAppMessage() {
-    return {
-      title: '商品详情',
-      path: "/pagesD/product/product?skuId=".concat(this.skuId)
-    };
-  },
+  // onShareAppMessage() {
+  // 	return {
+  // 		title: '商品详情',
+  // 		path: `/pagesD/product/product?skuId=${this.skuId}`
+  // 	};
+  // },
   computed: {
     selectedSpec: function selectedSpec() {
       var arr = [];

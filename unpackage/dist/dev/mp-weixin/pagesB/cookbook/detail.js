@@ -140,7 +140,7 @@ var render = function () {
         var $orig = _vm.__get_orig(day)
         var l0 = _vm.__map(_vm.rows, function (row, __i1__) {
           var $orig = _vm.__get_orig(row)
-          var g1 = _vm.mergedQuantities(day[row] || []).join("、")
+          var g1 = _vm.mergedQuantities(day[row] || []).join("\n")
           return {
             $orig: $orig,
             g1: g1,
@@ -217,13 +217,13 @@ var _default = {
       userId: '',
       family: [],
       recipe_content: [],
-      rows: ['breakfast', 'morning', 'lunch', 'snack', 'dinner'],
+      rows: ['breakfast', 'lunch', 'snack', 'dinner', 'morning'],
       rowsMap: {
         breakfast: '早餐',
-        morning: '晨起',
         lunch: '午餐',
         snack: '加餐',
-        dinner: '晚餐'
+        dinner: '晚餐',
+        morning: '药食同源'
       }
     };
   },
@@ -233,12 +233,12 @@ var _default = {
     this.recipeId = option.recipeId;
     this.getCookbooks();
   },
-  onShareAppMessage: function onShareAppMessage() {
-    return {
-      title: '食谱详情',
-      path: "/pagesB/cookbook/detail?recipeId=".concat(this.recipeId, "&memberId=").concat(this.memberId, "&userId=").concat(this.userId || this.userInfo.member_id)
-    };
-  },
+  // onShareAppMessage() {
+  // 	return {
+  // 		title: '食谱详情',
+  // 		path: `/pagesB/cookbook/detail?recipeId=${this.recipeId}&memberId=${this.memberId}&userId=${this.userId || this.userInfo.member_id}`
+  // 	};
+  // },
   computed: _objectSpread({}, (0, _vuex.mapState)(['member', 'userInfo'])),
   methods: _objectSpread(_objectSpread({}, (0, _vuex.mapMutations)(['setNutritionData'])), {}, {
     onAnalysis: function onAnalysis() {
@@ -278,7 +278,7 @@ var _default = {
     mergedQuantities: function mergedQuantities(meal) {
       var _ref;
       return (_ref = []).concat.apply(_ref, (0, _toConsumableArray2.default)(meal.map(function (dish) {
-        return dish.quantity;
+        return dish.name + '(' + dish.quantity + ')';
       })));
     },
     selectMember: function selectMember(member) {

@@ -56,26 +56,26 @@ export default {
 		this.member_card_id = option.cardId;
 		this.out_trade_no = option.outTradeNo;
 	},
-	onShareAppMessage() {
-		// 调用赠送接口
-		this.onPresent();
-		const promise = new Promise((resolve) => {
-			setTimeout(() => {
-				resolve({
-					title: this.blessing || '赠你一份好礼，祝你每天都开心快乐！',
-					imageUrl: this.expression_path,
-					path: `/pagesA/gift/gift?no=${this.no}&outTradeNo=${this.out_trade_no}`
-				});
-				this.isShare = true;
-			}, 2000);
-		});
-		return {
-			title: this.blessing || '赠你一份好礼，祝你每天都开心快乐！',
-			imageUrl: this.expression_path,
-			path: `/pagesA/gift/gift?no=${this.no}&outTradeNo=${this.out_trade_no}`,
-			promise
-		};
-	},
+	// onShareAppMessage() {
+	// 	// 调用赠送接口
+	// 	this.onPresent();
+	// 	const promise = new Promise((resolve) => {
+	// 		setTimeout(() => {
+	// 			resolve({
+	// 				title: this.blessing || '赠你一份好礼，祝你每天都开心快乐！',
+	// 				imageUrl: this.expression_path,
+	// 				path: `/pagesA/gift/gift?no=${this.no}&outTradeNo=${this.out_trade_no}`
+	// 			});
+	// 			this.isShare = true;
+	// 		}, 2000);
+	// 	});
+	// 	return {
+	// 		title: this.blessing || '赠你一份好礼，祝你每天都开心快乐！',
+	// 		imageUrl: this.expression_path,
+	// 		path: `/pagesA/gift/gift?no=${this.no}&outTradeNo=${this.out_trade_no}`,
+	// 		promise
+	// 	};
+	// },
 	watch: {
 		isShare() {
 			uni.redirectTo({

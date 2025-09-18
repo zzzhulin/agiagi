@@ -18,7 +18,7 @@
     }
   },
   "compileType": "miniprogram",
-  "libVersion": "3.6.6",
+  "libVersion": "",
   "appid": "wx595159db5091efb4",
   "projectname": "AI",
   "condition": {

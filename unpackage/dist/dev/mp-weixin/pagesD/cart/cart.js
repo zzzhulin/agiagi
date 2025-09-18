@@ -244,12 +244,14 @@ var _default = {
   onPageScroll: function onPageScroll(e) {
     this.navbarBgColor = e.scrollTop >= 50 ? '#ffffff' : 'transparent';
   },
-  onShareAppMessage: function onShareAppMessage() {
-    return {
-      title: '购物清单',
-      path: this.text ? "/pagesD/cart/cart?text=".concat(this.text, "&memberId=").concat(this.memberId || this.taskInfo.member_id, "&userId=").concat(this.userId || this.userInfo.member_id) : "/pagesD/cart/cart?memberId=".concat(this.memberId || this.taskInfo.member_id, "&userId=").concat(this.userId || this.userInfo.member_id)
-    };
-  },
+  // onShareAppMessage() {
+  // 	return {
+  // 		title: '购物清单',
+  // 		path: this.text
+  // 			? `/pagesD/cart/cart?text=${this.text}&memberId=${this.memberId || this.taskInfo.member_id}&userId=${this.userId || this.userInfo.member_id}`
+  // 			: `/pagesD/cart/cart?memberId=${this.memberId || this.taskInfo.member_id}&userId=${this.userId || this.userInfo.member_id}`
+  // 	};
+  // },
   computed: _objectSpread({}, (0, _vuex.mapState)(['userInfo', 'taskInfo'])),
   methods: {
     openPopup: function openPopup() {

@@ -197,6 +197,12 @@ var _request = __webpack_require__(/*! @/utils/request */ 34);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -224,6 +230,11 @@ var _default = {
             _this.orderInfo = res;
           }
         }
+      });
+    },
+    navigateTo: function navigateTo(url) {
+      uni.redirectTo({
+        url: url
       });
     },
     navigateToGive: function navigateToGive() {

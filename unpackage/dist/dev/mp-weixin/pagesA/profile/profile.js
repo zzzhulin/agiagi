@@ -241,12 +241,12 @@ var _default = {
   onPageScroll: function onPageScroll(e) {
     this.navbarBgColor = e.scrollTop >= 50 ? '#ffffff' : 'transparent';
   },
-  onShareAppMessage: function onShareAppMessage() {
-    return {
-      title: '健康档案',
-      path: "/pagesA/profile/profile?tab=".concat(this.activeTab, "&memberId=").concat(this.memberId, "&userId=").concat(this.userId || this.userInfo.member_id)
-    };
-  },
+  // onShareAppMessage() {
+  // 	return {
+  // 		title: '健康档案',
+  // 		path: `/pagesA/profile/profile?tab=${this.activeTab}&memberId=${this.memberId}&userId=${this.userId || this.userInfo.member_id}`
+  // 	};
+  // },
   computed: _objectSpread({}, (0, _vuex.mapState)(['userInfo'])),
   methods: {
     onUpload: function onUpload() {
