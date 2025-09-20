@@ -1,7 +1,7 @@
 <template>
 	<Flexbox direction="column" gap="12" className="profile-disease">
 		<Flexbox align="justify" gap="19" className="disease-info" v-for="disease in diseases" :key="disease.history_id">
-			<Typography>{{ disease.diagnosis_date ? disease.diagnosis_date.replace(/-/g, '.') : '' }}</Typography>
+			<Typography>{{ disease.diagnosis_date ? disease.diagnosis_date.replace(/-/g, '.') : formatDate(disease.create_time, 'YYYY.MM.DD') }}</Typography>
 			<Typography>{{ disease.disease_name }}</Typography>
 		</Flexbox>
 		<Flexbox align="center" direction="column" className="empty-content" v-if="!diseases.length && loaded">
@@ -13,9 +13,11 @@
 
 <script>
 import { request } from '@/utils/request';
+import { formatDate } from '@/utils/util';
 export default {
 	data() {
 		return {
+			formatDate,
 			loaded: false,
 			diseases: []
 		};

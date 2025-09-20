@@ -115,9 +115,13 @@ var render = function () {
     var g0 = disease.diagnosis_date
       ? disease.diagnosis_date.replace(/-/g, ".")
       : null
+    var m0 = !disease.diagnosis_date
+      ? _vm.formatDate(disease.create_time, "YYYY.MM.DD")
+      : null
     return {
       $orig: $orig,
       g0: g0,
+      m0: m0,
     }
   })
   var g1 = !_vm.diseases.length && _vm.loaded
@@ -170,6 +174,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _request = __webpack_require__(/*! @/utils/request */ 34);
+var _util = __webpack_require__(/*! @/utils/util */ 36);
 //
 //
 //
@@ -186,6 +191,7 @@ var _request = __webpack_require__(/*! @/utils/request */ 34);
 var _default = {
   data: function data() {
     return {
+      formatDate: _util.formatDate,
       loaded: false,
       diseases: []
     };
