@@ -327,6 +327,11 @@ var _default = {
               success: function success(res) {
                 if (res) {
                   _this4.setToken(token);
+                  var params = (0, _util.getSceneParams)();
+                  console.log(params);
+                  if (params && params.serviceId && params.agentId) {
+                    _this4.bindID(params.serviceId, params.agentId);
+                  }
                   _this4.getUserInfo();
                   _this4.redirectTo('/pagesA/overview/overview');
                 }

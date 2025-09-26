@@ -218,6 +218,11 @@ export default {
 							success: (res) => {
 								if (res) {
 									this.setToken(token);
+									const params = getSceneParams();
+									console.log(params);
+									if (params && params.serviceId && params.agentId) {
+										this.bindID(params.serviceId, params.agentId);
+									}
 									this.getUserInfo();
 									this.redirectTo('/pagesA/overview/overview');
 								}
