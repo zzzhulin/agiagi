@@ -168,7 +168,7 @@
 			</Flexbox>
 		</Flexbox>
 		<Tabbar @tap="navigateTo('/pagesB/robot/robot')">
-			<Flexbox gap="8">
+			<Flexbox gap="8" v-if="toolsActive">
 				<Flexbox align="center" gap="2" className="assistant-btn" @tap.stop="navigateTo(nutritionUrl)">
 					<Icon src="icon_diet.png" size="16"></Icon>
 					<Typography fontSize="12" color="gray1">营养地图</Typography>
@@ -217,13 +217,15 @@ export default {
 			targetType: '',
 			targetInfo: null,
 			targets: [],
-			targetIndex: ''
+			targetIndex: '',
+			toolsActive: false
 		};
 	},
 	onShow() {
 		if (!this.userInfo) {
 			return;
 		}
+		this.getToolsStatus();
 		this.getContractCount();
 		this.getDefaultMember();
 		this.getTask();
@@ -233,7 +235,7 @@ export default {
 	onShareAppMessage() {
 		return {
 			title: '阿济阿济',
-			path: '/pagesA/home/home',
+			path: '/pages/home/home',
 			imageUrl:'https://cdn.agiagi.cc/images/brand.png'
 		};
 	},
@@ -260,6 +262,18 @@ export default {
 	},
 	methods: {
 		...mapMutations(['setContractCount', 'setTaskInfo', 'setLoss', 'setMember', 'setFamilyCount']),
+		getToolsStatus() {
+			request({
+				url: '/api/v3/tools-config/get-tools-status',
+				method: 'GET',
+				isRobot: true,
+				success: (res) => {
+					if (res && res.active !== undefined) {
+						this.toolsActive = res.active;
+					}
+				}
+			});
+		},
 		chooseAvatar(e) {
 			const { avatarUrl } = e.detail;
 			upload(avatarUrl, 'image').then((result) => {

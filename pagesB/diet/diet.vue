@@ -145,7 +145,7 @@
 						</Flexbox>
 					</Flexbox>
 				</block>
-				<Flexbox align="center" direction="column" className="empty-content" v-else>
+				<Flexbox align="center" direction="column" className="empty-content" v-if="loaded && !scheme">
 					<Icon src="empty-scheme.png" size="128"></Icon>
 					<Flexbox align="center" direction="column" gap="12">
 						<Typography color="gray2">当前还没有制定专属方案</Typography>
@@ -193,6 +193,7 @@ export default {
 			memberInfo: null,
 			scheme: null,
 			pieResult: null,
+			loaded: false,
 			radarOption: {
 				title: {
 					text: '* 选用中国人膳食推荐标准 *',
@@ -441,6 +442,9 @@ export default {
 						this.scheme = res;
 						this.getRadar();
 					}
+				},
+				complete: () => {
+					this.loaded = true;
 				}
 			});
 		},

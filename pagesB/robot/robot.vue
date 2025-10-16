@@ -107,7 +107,7 @@
 			</view>
 		</scroll-view>
 		<Tabbar :canChat="true" :canSend="!isWaiting && isFinished" from="robot" @confirm="sendMessage" @setHeight="setHeight">
-			<Flexbox gap="8">
+			<Flexbox gap="8" v-if="toolsActive">
 				<Flexbox align="center" gap="2" className="assistant-btn" @tap.stop="navigateTo(nutritionUrl)">
 					<Icon src="icon_diet.png" size="16"></Icon>
 					<Typography fontSize="12" color="gray1">营养地图</Typography>
@@ -157,10 +157,12 @@ export default {
 			animationTimer: null,
 			messages: [],
 			friends: [],
-			goodsCount: 0
+			goodsCount: 0,
+			toolsActive: false
 		};
 	},
 	async onLoad() {
+		this.getToolsStatus();
 		this.getSessionId();
 		this.getRecords();
 		this.getFriends();
@@ -178,6 +180,18 @@ export default {
 		...mapState(['userInfo', 'statusBarHeight', 'member'])
 	},
 	methods: {
+		getToolsStatus() {
+			request({
+				url: '/api/v3/tools-config/get-tools-status',
+				method: 'GET',
+				isRobot: true,
+				success: (res) => {
+					if (res && res.active !== undefined) {
+						this.toolsActive = res.active;
+					}
+				}
+			});
+		},
 		getGoods(text) {
 			request({
 				url: '/api/v2/product-ai-recommend/recommend',

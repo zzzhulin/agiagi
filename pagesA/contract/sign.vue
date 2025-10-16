@@ -33,7 +33,7 @@
 			</Flexbox>
 		</uni-popup>
 		<Tabbar @tap="navigateTo('/pagesB/robot/robot')">
-			<Flexbox gap="8" v-if="current">
+			<Flexbox gap="8" v-if="toolsActive && current">
 				<Flexbox align="center" gap="2" className="assistant-btn">
 					<Icon src="icon_happy.png" size="16"></Icon>
 					<Typography fontSize="12" color="gray1">开心解压</Typography>
@@ -51,14 +51,14 @@
 					<Typography fontSize="12" color="gray1">减龄抗衰</Typography>
 				</Flexbox>
 			</Flexbox>
-			<Flexbox gap="8" v-else>
+			<Flexbox gap="8" v-if="toolsActive && !current">
 				<Flexbox align="center" gap="2" className="assistant-btn">
 					<Icon src="icon_body.png" size="16"></Icon>
 					<Typography fontSize="12" color="gray1">减肥增肌</Typography>
 				</Flexbox>
 				<Flexbox align="center" gap="2" className="assistant-btn">
 					<Icon src="icon_height.png" size="16"></Icon>
-					<Typography fontSize="12" color="gray1">增高成和</Typography>
+					<Typography fontSize="12" color="gray1">增高成长</Typography>
 				</Flexbox>
 				<Flexbox align="center" gap="2" className="assistant-btn">
 					<Icon src="icon_happy.png" size="16"></Icon>
@@ -84,10 +84,12 @@ export default {
 			avatar: '',
 			nickname: '',
 			current: 0,
-			officers: []
+			officers: [],
+			toolsActive: false
 		};
 	},
 	onLoad() {
+		this.getToolsStatus();
 		if (this.token) {
 			if (!this.userInfo) {
 				this.getUserInfo();
@@ -115,6 +117,18 @@ export default {
 	methods: {
 		...mapMutations(['setToken']),
 		...mapActions(['getUserInfo']),
+		getToolsStatus() {
+			request({
+				url: '/api/v3/tools-config/get-tools-status',
+				method: 'GET',
+				isRobot: true,
+				success: (res) => {
+					if (res && res.active !== undefined) {
+						this.toolsActive = res.active;
+					}
+				}
+			});
+		},
 		bindID(service_id, agent_id) {
 			request({
 				url: '/api/contract.service/sendContractServiceCard',
